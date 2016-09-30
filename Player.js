@@ -7,7 +7,7 @@ class Player {
     var me = gameState.players[gameState.in_action];
     var hole_cards = me.hole_cards;
     
-    if(hole_cards[0].rank === hole_cards[1].rank) {
+    if(hole_cards[0].rank === hole_cards[1].rank && [9,10,"J","Q","K","A"].indexOf(hole_cards[1].rank) >= 0) {
       return 10000;
     } else {
       if (gameState.current_buy_in < gameState.small_blind * 4) {
