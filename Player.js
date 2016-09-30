@@ -4,7 +4,7 @@ class Player {
   }
 
   static betRequest(gameState) {
-    return 0;
+    return 10000;
   }
 
   static showdown(gameState) {
