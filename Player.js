@@ -11,7 +11,7 @@ class Player {
       return 10000;
     } else {
       if (gameState.current_buy_in < gameState.small_blind * 4) {
-        return gameState.current_buy_in - me.bet - gameState.minimum_raise;
+        return Math.max(0, gameState.current_buy_in - me.bet - gameState.minimum_raise);
       } else {
         return 0; 
       }
