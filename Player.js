@@ -7,14 +7,14 @@ class Player {
     var hole_cards = Player.me(gameState).hole_cards;
 
     if(Player.pair(hole_cards) && [9,10,"J","Q","K","A"].indexOf(hole_cards[1].rank) >= 0) {
-      return Math.max(Player.minumumRaise(gameState), Math.floor(me.stack / 3));
+      return Math.max(Player.minumumRaise(gameState), Math.floor(Player.me(gameState).stack / 3));
     } else if(Player.pair(hole_cards) && Player.inHeadsUp(gameState)) {
       return 10000;
     } else if(Player.suited(hole_cards) && Player.inHeadsUp(gameState)) {
       if(gameState.community_cards.length === 0) {
         return Player.call(gameState)
       } else if(Player.flush(gameState)) {
-        return Math.max(Player.minumumRaise(gameState), Math.floor(me.stack / 3));
+        return Math.max(Player.minumumRaise(gameState), Math.floor(Player.me(gameState).stack / 3));
       } else {
         return 0;
       }
