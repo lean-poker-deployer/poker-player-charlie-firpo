@@ -8,8 +8,8 @@ class Player {
     
     if(hole_cards[0].rank === hole_cards[1].rank && [9,10,"J","Q","K","A"].indexOf(hole_cards[1].rank) >= 0) {
       return 10000;
-    // } else if(hole_cards[0].rank === hole_cards[1].rank && Player.isSmallBet(gameState)) {
-    //   return Player.minumumRaise(gameState);
+    } else if(hole_cards[0].rank === hole_cards[1].rank && Player.inHeadsUp(gameState)) {
+      return 10000;
     } else {
       return 0;
     }
@@ -17,6 +17,13 @@ class Player {
 
   static me(gameState) {
     return gameState.players[gameState.in_action];
+  }
+
+  static inHeadsUp(gameState) {
+    var activePlayers = gameState.players.filter(function(player) {
+      return player.status !== 'out';
+    });
+    return activePlayers.length < 3;
   }
 
   static minumumRaise(gameState) {
