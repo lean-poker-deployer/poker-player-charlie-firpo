@@ -4,7 +4,6 @@ class Player {
   }
 
   static betRequest(gameState) {
-    /*
     var me = gameState.players[gameState.in_action];
     var hole_cards = me.hole_cards;
     
@@ -12,13 +11,11 @@ class Player {
       return 10000;
     } else {
       if (gameState.current_buy_in < gameState.small_blind * 4) {
-        return gameState.current_buy_in - me.bet _ gameState.minimum_raise;
+        return gameState.current_buy_in - me.bet - gameState.minimum_raise;
       } else {
         return 0; 
       }
     }
-    */
-    return 10000;
   }
 
   static showdown(gameState) {
