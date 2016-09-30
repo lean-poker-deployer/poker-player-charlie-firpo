@@ -4,8 +4,10 @@ class Player {
   }
 
   static betRequest(gameState) {
+    /*
     var me = gameState.players[gameState.in_action];
     var hole_cards = me.hole_cards;
+    
     if(hole_cards[0].rank === hole_cards[1].rank) {
       return 10000;
     } else {
@@ -15,6 +17,8 @@ class Player {
         return 0; 
       }
     }
+    */
+    return 10000;
   }
 
   static showdown(gameState) {
